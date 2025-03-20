@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Select from "react-select";
+import Select, { SingleValue } from "react-select";
 import { fetchQuestionnaires } from "../store/questionnaires/operations";
 import { useAppDispatch } from "../store/hooks";
 
@@ -15,10 +15,9 @@ export default function Filter() {
     null
   );
 
-  const handleSortChange = (selectedOption: {
-    value: string;
-    label: string;
-  }) => {
+  const handleSortChange = (
+    selectedOption: SingleValue<{ value: string; label: string }>
+  ) => {
     setSortBy(selectedOption);
   };
 

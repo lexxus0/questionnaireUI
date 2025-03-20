@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { fetchQuestionnaires } from "../store/questionnaires/operations";
+import { useAppSelector } from "../store/hooks";
 import { selectQuestionnaires } from "../store/questionnaires/selectors";
 import { IQuestionnaire } from "../interfaces/interfaces";
 import QuestionnaireItem from "./QuestionnaireItem";
@@ -8,8 +6,6 @@ import Header from "./Header";
 import Filter from "./Filter";
 
 export default function QuestionnairesList() {
-  const dispatch = useAppDispatch();
-
   const questionnaires = useAppSelector(selectQuestionnaires);
 
   return (
